@@ -417,11 +417,13 @@ def create_enhanced_deck():
         tf.word_wrap = True
         tf.margin_left = tf.margin_top = tf.margin_right = tf.margin_bottom = 0
         p = tf.paragraphs[0]
-        r1 = p.add_run(f"🎯 Objective {idx+1}: {title} — ")
+        r1 = p.add_run()
+        r1.text = f"Objective {idx+1}: {title} — "
         r1.bold = True
         r1.font.size = Pt(11)
         r1.font.color.rgb = acc
-        r2 = p.add_run(desc)
+        r2 = p.add_run()
+        r2.text = desc
         r2.font.size = Pt(10)
         r2.font.color.rgb = C_TEXT_DARK
 
@@ -783,11 +785,13 @@ def create_enhanced_deck():
         tf.word_wrap = True
         tf.margin_left = tf.margin_top = tf.margin_right = tf.margin_bottom = 0
         p = tf.paragraphs[0]
-        r1 = p.add_run(f"{actor_msg} — ")
+        r1 = p.add_run()
+        r1.text = f"{actor_msg} — "
         r1.bold = True
         r1.font.size = Pt(11)
         r1.font.color.rgb = acc
-        r2 = p.add_run(detail)
+        r2 = p.add_run()
+        r2.text = detail
         r2.font.size = Pt(10)
         r2.font.color.rgb = C_TEXT_DARK
 
@@ -1058,7 +1062,7 @@ def create_enhanced_deck():
     p2.space_before = Pt(24)
 
     # Save
-    out_file = os.path.abspath("Bank_Management_System_Software_Engineering_Presentation.pptx")
+    out_file = os.path.abspath("Bank_Management_System_Software_Engineering_Presentation_V2.pptx")
     prs.save(out_file)
     print(f"Enhanced presentation successfully saved at: {out_file}")
 
